@@ -1,0 +1,21 @@
+wedding_rsvp/
+│
+├── app/
+│   ├── __init__.py
+│   ├── routes.py
+│   ├── models.py
+│   ├── forms.py
+│   ├── utils.py
+│   └── database.py
+│
+├── templates/
+│   └── rsvp_form.html
+│
+├── static/
+│   └── css/
+│   └── js/
+│
+├── config.py
+├── run.py
+├── requirements.txt
+└── .gitignore
