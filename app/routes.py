@@ -1,4 +1,4 @@
-from flask import Blueprint, request, redirect, url_for, render_template
+from flask import Blueprint, request, redirect, url_for, render_template, os
 from twilio.twiml.messaging_response import MessagingResponse
 from app.models import save_rsvp
 
