@@ -7,7 +7,7 @@ main = Blueprint('main', __name__)
 #Root route
 @main.route('/')
 def index():
-    print("Index route accessed")
+    print("Current working directory:", os.getcwd())
     return render_template('index.html')
 
 #Whatsapp 
