@@ -8,9 +8,9 @@ main = Blueprint('main', __name__)
 #Root route
 @main.route('/')
 def index():
-    return send_from_directory(os.getcwd(), 'index.html')
-   # print("Current working directory:", os.getcwd())
-   # return render_template('index.html')
+    #return send_from_directory(os.getcwd(), 'index.html')
+   print("Current working directory:", os.getcwd())
+   return render_template('index.html')
 
 #Whatsapp 
 @main.route('/whatsapp', methods=['POST'])
