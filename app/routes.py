@@ -1,5 +1,5 @@
 import os
-from flask import Blueprint, request, redirect, url_for, render_template
+from flask import Blueprint, request, redirect, send_from_directory, url_for, render_template
 from twilio.twiml.messaging_response import MessagingResponse
 from app.models import save_rsvp
 
@@ -8,8 +8,9 @@ main = Blueprint('main', __name__)
 #Root route
 @main.route('/')
 def index():
-    print("Current working directory:", os.getcwd())
-    return render_template('index.html')
+    return send_from_directory(os.getcwd(), 'index.html')
+   # print("Current working directory:", os.getcwd())
+   # return render_template('index.html')
 
 #Whatsapp 
 @main.route('/whatsapp', methods=['POST'])
