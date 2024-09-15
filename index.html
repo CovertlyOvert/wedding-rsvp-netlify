@@ -77,6 +77,7 @@
             <span id="close-modal" class="close">&times;</span>
             <h2>RSVP to Our Wedding</h2>
             <form action="https://wedding-rsvp-app-807373082734.asia-south1.run.app/submit_rsvp" method="POST">
+                <!-- Hidden field for phone number -->
                 <input type="hidden" id="phone_number" name="phone_number" value="None">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required><br><br>
@@ -106,34 +107,50 @@
 
     <!-- JavaScript for Pop-Up Modal -->
     <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const showModal = urlParams.get('rsvp');
-        const modal = document.getElementById('rsvp-modal');
-        const closeModal = document.getElementById('close-modal');
+        // Show modal when ?rsvp=true is in the URL
+const urlParams = new URLSearchParams(window.location.search);
+const showModal = urlParams.get('rsvp');
+const modal = document.getElementById('rsvp-modal');
+const closeModal = document.getElementById('close-modal');
 
-        if (showModal === 'true') {
-            modal.style.display = 'block';
-        }
+if (showModal === 'true') {
+    modal.style.display = 'block';
+}
 
-        closeModal.onclick = function() {
-            modal.style.display = 'none';
-            window.location.href = '/';  // Redirect to homepage after closing the modal
-        };
+// Close modal
+closeModal.onclick = function () {
+    modal.style.display = 'none';
+    window.location.href = '/'; // Redirect to homepage after closing the modal
+};
 
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-                window.location.href = '/';  // Redirect to homepage after clicking outside
-            }
-        };
+// If the user clicks outside the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+        window.location.href = '/'; // Redirect to homepage after clicking outside
+    }
+};
 
-        function getQueryParam(param) {
-            let urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
+// Auto-fill phone number from URL query parameters
+function getQueryParam(param) {
+    let urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
 
-        let phoneNumber = getQueryParam('phone_number') || 'None';
-        document.getElementById('phone_number').value = phoneNumber;
+let phoneNumber = getQueryParam('phone_number') || 'None';
+document.getElementById('phone_number').value = phoneNumber;
+
+// Handle form submission
+const rsvpForm = document.querySelector('#rsvp-modal form');
+rsvpForm.onsubmit = function (e) {
+    e.preventDefault(); // Prevent default form submission
+    // Show thank you message
+    rsvpForm.innerHTML = "<h2>Thank you for your RSVP!</h2><p>Redirecting to the homepage...</p>";
+    // Redirect to homepage after 3 seconds
+    setTimeout(() => {
+        window.location.href = '/';
+    }, 3000);
+};
     </script>
 
 </body>
