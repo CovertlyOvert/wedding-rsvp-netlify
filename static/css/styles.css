@@ -1,0 +1,61 @@
+/* General body styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styling */
+header {
+  background-color: #ff6f61;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+  margin: 0;
+  font-family: 'Georgia', serif;
+}
+
+/* Section styling */
+section {
+  margin: 40px auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery styling */
+.engagement-gallery img {
+  width: 100%;
+  max-width: 300px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+/* Video section styling */
+.video-section iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+}
+
+/* Button styling */
+button {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff8368;
+}
