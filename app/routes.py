@@ -22,7 +22,7 @@ def whatsapp():
 
     if 'yes' in incoming_msg:
         # Generate a URL with the phone number as a query parameter
-        netlify_url = f"https://wedding-rsvp-app-807373082734.asia-south1.run.app/?phone_number={phone_number}"
+        netlify_url = f"https://main--sprightly-cucurucho-511aaa.netlify.app/?phone_number={phone_number}"
         msg.body(f"Great! Please complete your RSVP by clicking the link below:\n{netlify_url}")
     elif 'no' in incoming_msg:
         msg.body('Sorry to hear that! Let us know if anything changes.')
