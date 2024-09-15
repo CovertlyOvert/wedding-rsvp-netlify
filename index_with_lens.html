@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <title>Welcome to Ankit & Anaya's Wedding Website!!</title>
+</head>
+<body class="is-preload-0 is-preload-1 is-preload-2">
+
+    <!-- Main Content -->
+    <div id="main">
+
+        <!-- Header -->
+        <header id="header">
+            <h1>Ankit & Anaya's Wedding</h1>
+            <p>Join us for our special day! Explore our engagement moments and RSVP below.</p>
+            <ul class="icons">
+                <!-- Social media links, if any -->
+                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+        </header>
+
+        <!-- Engagement Teaser Video Section -->
+        <section class="video-section">
+            <h2>Watch Our Engagement Trailer Video</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9n9EzH3BxWA?si=nKYk_XoDsCN2bz2o" title="Our Engagement Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+
+        <!-- Engagement Full Video Section -->
+        <section class="video-section">
+            <h2>Watch Our Engagement Video</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/SkSOZUvj7mk?si=oLO1OR-S0Ac6nH4a" title="Anaya & Ankit Engagement Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+
+        <!-- Google Drive Photo Album Section -->
+        <section>
+            <h2>View All Our Engagement Photos</h2>
+            <p>Check out all the photos from our engagement on Google Drive. Click the link below to browse the album.</p>
+            <p><a href="https://drive.google.com/drive/u/0/folders/1vdmJVckhs0mKnt8djH_vMUIAWvWo6h4m" target="_blank" class="button">View Engagement Photos</a></p>
+        </section>
+
+        <!-- RSVP Form Section -->
+        <section>
+            <h2>RSVP to Our Wedding</h2>
+            <form action="https://wedding-rsvp-app-807373082734.asia-south1.run.app/submit_rsvp" method="POST">
+                <!-- Hidden field for phone number -->
+                <input type="hidden" id="phone_number" name="phone_number" value="None">
+                
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label>Will you attend?</label>
+                <input type="radio" id="yes" name="attendance" value="Yes" required>
+                <label for="yes">Yes</label><br>
+                <input type="radio" id="no" name="attendance" value="No" required>
+                <label for="no">No</label><br><br>
+                
+                <label for="arrival_date">Date of Arrival:</label>
+                <input type="date" id="arrival_date" name="arrival_date" required><br><br>
+                
+                <label for="departure_date">Date of Departure:</label>
+                <input type="date" id="departure_date" name="departure_date" required><br><br>
+                
+                <label for="guests">Number of Guests:</label>
+                <input type="number" id="guests" name="guests" min="1" required><br><br>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="copyright">
+                <li>&copy; Ankit & Anaya's Wedding. All Rights Reserved.</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <!-- Auto-fill phone number from URL query parameters -->
+    <script>
+        function getQueryParam(param) {
+            let urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        let phoneNumber = getQueryParam('phone_number') || 'None';
+        document.getElementById('phone_number').value = phoneNumber;
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <title>Ankit & Anaya's Wedding Website</title>
+</head>
+<body class="is-preload">
+
+    <!-- Header -->
+    <section id="header">
+        <div class="inner">
+            <span class="icon solid major fa-heart"></span>
+            <h1>Welcome to <strong>Ankit & Anaya's Wedding</strong></h1>
+            <p>Join us for our special day! Explore our engagement moments and RSVP below.</p>
+            <ul class="actions special">
+                <li><a href="#one" class="button scrolly">Discover</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Engagement Trailer Video Section -->
+    <section id="one" class="main style1">
+        <div class="container">
+            <div class="row gtr-150">
+                <div class="col-6 col-12-medium">
+                    <header class="major">
+                        <h2>Watch Our Engagement Trailer</h2>
+                    </header>
+                    <p>We are excited to share our special moments with you. Watch our engagement trailer below!</p>
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/9n9EzH3BxWA?si=nKYk_XoDsCN2bz2o" title="Our Engagement Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="col-6 col-12-medium">
+                    <span class="image fit"><img src="images/trailer-thumbnail.jpg" alt="Engagement Photo" /></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engagement Full Video Section -->
+    <section id="two" class="main style2">
+        <div class="container">
+            <header class="major">
+                <h2>Watch Our Full Engagement Video</h2>
+            </header>
+            <iframe width="100%" height="500" src="https://www.youtube.com/embed/SkSOZUvj7mk?si=oLO1OR-S0Ac6nH4a" title="Anaya & Ankit Engagement Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Google Drive Photo Album Section -->
+    <section id="three" class="main style1 special">
+        <div class="container">
+            <header class="major">
+                <h2>View Our Engagement Photos</h2>
+            </header>
+            <p>Explore our engagement photo album on Google Drive.</p>
+            <p><a href="https://drive.google.com/drive/u/0/folders/1tZm-hRcc37Nhj3FQOcX-MmiVEvmjkCvy" target="_blank" class="button">View Engagement Photos</a></p>
+        </div>
+    </section>
+
+    <!-- RSVP Form Section -->
+    <section id="four" class="main style2 special">
+        <div class="container">
+            <header class="major">
+                <h2>RSVP to Our Wedding</h2>
+            </header>
+            <form action="https://wedding-rsvp-app-807373082734.asia-south1.run.app/submit_rsvp" method="POST">
+                <input type="hidden" id="phone_number" name="phone_number" value="None">
+                
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label>Will you attend?</label>
+                <input type="radio" id="yes" name="attendance" value="Yes" required>
+                <label for="yes">Yes</label><br>
+                <input type="radio" id="no" name="attendance" value="No" required>
+                <label for="no">No</label><br><br>
+                
+                <label for="arrival_date">Date of Arrival:</label>
+                <input type="date" id="arrival_date" name="arrival_date" required><br><br>
+                
+                <label for="departure_date">Date of Departure:</label>
+                <input type="date" id="departure_date" name="departure_date" required><br><br>
+                
+                <label for="guests">Number of Guests:</label>
+                <input type="number" id="guests" name="guests" min="1" required><br><br>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+        <ul class="icons">
+            <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy; Ankit & Anaya's Wedding. All Rights Reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+    </section>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Auto-fill phone number from URL query parameters -->
+    <script>
+        function getQueryParam(param) {
+            let urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        let phoneNumber = getQueryParam('phone_number') || 'None';
+        document.getElementById('phone_number').value = phoneNumber;
+    </script>
+</body>
+</html>
